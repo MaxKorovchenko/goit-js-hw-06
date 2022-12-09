@@ -1,4 +1,4 @@
-// IN PROGRESS// бажано виконати так, щоб при кожному наступному натисканні на кнопку create розмір першого домальованого діва обчислювався виходячи з розмірів відрендереного останнього 😭😭😢😢
+// IN PROGRESS// бажано виконати так, щоб при кожному наступному натисканні на кнопку create розмір першого домальованого діва обчислювався виходячи з розмірів відрендереного останнього 😁😁😁😁
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
@@ -29,8 +29,23 @@ function createBoxes(amount) {
   }
 }
 
+function createNextBoxes(amount) {
+  for (let i = 1; i <= amount; i += 1) {
+    const div = document.createElement("div");
+    div.style.width = `${i * 10 + boxes.lastElementChild.scrollWidth}px`;
+    div.style.height = `${i * 10 + boxes.lastElementChild.scrollHeight}px`;
+    div.style.backgroundColor = getRandomHexColor();
+    boxes.append(div);
+  }
+}
+
 function onClickCreate() {
-  createBoxes(amount);
+  if (boxes.children.length === 0) {
+    createBoxes(amount);
+  } else {
+    createNextBoxes(amount);
+  }
+
   console.dir(boxes.lastElementChild.scrollWidth);
   console.dir(boxes.lastElementChild.scrollHeight);
 }
