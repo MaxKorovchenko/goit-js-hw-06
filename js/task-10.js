@@ -45,9 +45,6 @@ function onClickCreate() {
   } else {
     createNextBoxes(amount);
   }
-
-  console.dir(boxes.lastElementChild.scrollWidth);
-  console.dir(boxes.lastElementChild.scrollHeight);
 }
 
 function onClickDestroy() {
