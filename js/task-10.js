@@ -9,7 +9,7 @@ const input = document.querySelector("input");
 const btnCreate = document.querySelector("button[data-create]");
 const btnDestroy = document.querySelector("button[data-destroy]");
 
-let amount = 10;
+let amount = 1;
 
 input.addEventListener("input", onInputAction);
 btnCreate.addEventListener("click", onClickCreate);
